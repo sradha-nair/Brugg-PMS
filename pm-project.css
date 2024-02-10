@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #abdbe3;
+    /* Light grey background */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    /* White header background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+}
+
+.logo {
+    max-height: 50px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    margin-right: 10px;
+}
+
+.logout {
+    color: #53baee;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.return-btn {
+    background-color: #53baee;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Style for each container */
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Shadow effect */
+    margin: 20px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #53baee;
+    /* Footer color */
+    width: 100%;
+}
+
+body.dashboard-body {
+    background-color: #abdbe3;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.return-btn {
+    background-color: #53baee;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.return-btn:hover {
+    background-color: #4088aa;
+    /* Darker shade when hovered */
+}
+
+.add-member-btn {
+    background-color: #63b35b;
+    /* Green color */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    /* Make it round */
+    cursor: pointer;
+}
+
+.generate-report-btn,
+.download-btn,
+.approve-btn {
+    background-color: #63b35b;
+    /* Green color */
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.generate-report-btn:hover,
+.download-btn:hover,
+.approve-btn:hover {
+    background-color: #63b35b;
+    /* Darker shade when hovered */
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: #53baee;
+    color: white;
+}
+
+.data-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.container {
+    position: relative;
+}
+
+.download-all-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #63b35b;
+    /* Green color */
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px;
+}
+
+.download-all-btn:hover {
+    background-color: #63b35b;
+    /* Darker shade when hovered */
+}
+
+.approve-btn {
+    background-color: #63b35b;
+    /* Green color */
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.container button {
+    background-color: #63b35b;
+    /* Green color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.container button:hover {
+    background-color: #63b35b;
+    /* Darker shade when hovered */
+}
+
+.disapprove-btn {
+    background-color: #FF5252;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.disapprove-btn:hover {
+    background-color: #e04848;
+    /* Darker shade of red when hovered */
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jointer-project.css">
+    <title>Jointer Project</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/brugg-logo-1.png" alt="Company Logo" class="logo">
+        <div class="profile-section">
+            <!-- Add profile icon or image here -->
+            <span class="username">Jointer's Name</span>
+            <a href="#" class="logout">Logout</a>
+        </div>
+        <a href="jointer-dashboard.html" class="return-btn">Return to Dashboard</a>
+    </header>
+    <main>
+
+        <!-- Project Details Container -->
+        <div class="container project-details">
+            <h2>Project Details</h2>
+            <p><strong>Project Name:</strong> Project XYZ</p>
+            <p><strong>Project Code:</strong> DXB 456</p>
+            <p><strong>Start Date:</strong> DD/MM/YYYY</p>
+            <p><strong>Deadline:</strong> DD/MM/YYYY</p>
+        </div>
+
+        <!-- Time Sheet Submission Container -->
+        <div class="container time-sheet-submission">
+            <h2>Time Sheet Submission</h2>
+            <form action="/submit-timesheet" method="post">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="startTime">Start Time:</label>
+                <input type="time" id="startTime" name="startTime" required>
+
+                <label for="endTime">End Time:</label>
+                <input type="time" id="endTime" name="endTime" required>
+
+                <button type="submit">Submit Time Sheet</button>
+            </form>
+        </div>
+
+        <!-- Site Photo/Video Upload Container -->
+        <div class="container site-upload">
+            <h2>Site Photo/Video Upload</h2>
+            <form action="/upload-site-media" method="post">
+                <input type="file" id="mediaFile" name="mediaFile" accept="image/*, video/*" required>
+                <input type="date" id="complaintDate" name="complaintDate" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+
+        <!-- Complaint Submission Container -->
+        <div class="container complaint-submission">
+            <h2>Complaint Submission</h2>
+            <form action="/submit-complaint" method="post">
+                <label for="complaintDate">Date:</label>
+                <input type="date" id="complaintDate" name="complaintDate" required>
+
+                <label for="complaint">Complaint:</label>
+                <textarea id="complaint" name="complaint" required></textarea>
+
+                <label for="details">Details:</label>
+                <textarea id="details" name="details" required></textarea>
+
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </div>
+
+        <!-- Delay Reporting Container -->
+        <div class="container delay-reporting">
+            <h2>Delay Reporting</h2>
+            <form action="/report-delay" method="post">
+                <label for="delayDate">Date:</label>
+                <input type="date" id="delayDate" name="delayDate" required>
+
+                <label for="delayReason">Reason for Delay:</label>
+                <textarea id="delayReason" name="delayReason" required></textarea>
+
+                <button type="submit">Report Delay</button>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        For assistance, contact: <a href="mailto:email@bruggcables.com">email@bruggcables.com</a>
+    </footer>
+
+</body>
+
+</html>

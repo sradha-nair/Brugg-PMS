@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pm-project.css">
+    <!-- You can create a separate CSS file for styling -->
+    <title>Project Manager Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/brugg-logo-1.png" alt="Company Logo" class="logo">
+        <button class="logout-btn">Logout</button>
+        <a href="pm-dashboard.html" class="return-btn">&#8592; Return to Dashboard</a>
+    </header>
+
+    <main>
+        <!-- Other sections of your dashboard -->
+
+        <!-- Project Details Container -->
+        <div class="container">
+            <h2>Project Details</h2>
+            <div class="project-details">
+                <p><strong>Project Name:</strong> Sample Project</p>
+                <p><strong>Project Code:</strong> DXB 123</p>
+                <p><strong>Start Date:</strong> DD/MM/YYYY</p>
+                <p><strong>Deadline:</strong> DD/MM/YYYY</p>
+            </div>
+        </div>
+
+        <!-- Photos/Videos Container -->
+        <div class="container">
+            <h2>Photos/Videos</h2>
+            <!-- Photos/Videos table goes here -->
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Uploader</th>
+                        <th>Photo/Video</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Photos/Videos content goes here -->
+                    <tr>
+                        <td>DD/MM/YYYY</td>
+                        <td>John Doe (Role: Jointer)</td>
+                        <td>
+                            <!-- Add photo/video viewer here if needed -->
+                            <a href="#" class="view-download-btn">View</a>
+                            <a href="#" class="view-download-btn">Download</a>
+                        </td>
+                        <td>Jane Doe (Role: Jointer)</td>
+                    </tr>
+                    <!-- Add more photo/video items as needed -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Complaints Container -->
+        <div class="container">
+            <h2>Complaints</h2>
+            <button onclick="downloadTable('complaint-details-table')">Download</button>
+            <table id="complaint-details-table">
+                <!-- Complaints table goes here -->
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Complaint Title</th>
+                            <th>Complainer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Complaints content goes here -->
+                        <tr>
+                            <td>DD/MM/YYYY</td>
+                            <td>Sample Complaint Title</td>
+                            <td>Jane Doe (Role: Jointer)</td>
+                        </tr>
+                        <!-- Add more complaint items as needed -->
+                    </tbody>
+                </table>
+        </div>
+        <!-- Delays Container -->
+        <div class="container">
+            <h2>Delays</h2>
+            <button onclick="downloadTable('delay-details-table')">Download</button>
+            <table id="delay-details-table">
+                <!-- Delays table goes here -->
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Submitted by</th>
+                            <th>Reason for Delay</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Delays content goes here -->
+                        <tr>
+                            <td>DD/MM/YYYY</td>
+                            <td>John Doe (Role: Jointer)</td>
+                            <td>Sample reason for delay</td>
+                        </tr>
+                        <!-- Add more delay items as needed -->
+                    </tbody>
+                </table>
+        </div>
+        <!-- Time Sheets Container -->
+        <div class="container">
+            <h2>Time Sheet</h2>
+            <!-- Time Sheets table goes here -->
+            <button onclick="downloadTable('time-sheet-table')">Download</button>
+            <table id="time-sheet-table">
+                <!-- Your table content... -->
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Jointer Name</th>
+                            <th>Approval Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Time Sheets content goes here -->
+                        <tr>
+                            <td>DD/MM/YYYY</td>
+                            <td>HH:mm</td>
+                            <td>HH:mm</td>
+                            <td>John Doe (Role: Jointer)</td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="approve-btn" onclick="changeStatus(this, 'Approved')">Approve</button>
+                                <button class="disapprove-btn" onclick="changeStatus(this, 'Disapproved')">Disapprove</button>
+                            </td>
+                        </tr>
+                        <!-- Add more time sheet items as needed -->
+                    </tbody>
+                </table>
+        </div>
+        <!-- Team Members Container -->
+        <div class="container">
+            <h2>Team Members</h2>
+            <button onclick="downloadTable('teams-details-table')">Download</button>
+            <table id="team-details-table">
+                <!-- Team Member Form -->
+                <form id="addMemberForm">
+                    <label for="memberName">Name:</label>
+                    <input type="text" id="memberName" name="memberName" required>
+
+                    <label for="memberEmail">Email:</label>
+                    <input type="email" id="memberEmail" name="memberEmail" required>
+
+                    <label for="memberRole">Role:</label>
+                    <select id="memberRole" name="memberRole" required>
+            <option value="Jointer">Jointer</option>
+            <!-- Add more roles as needed -->
+        </select>
+
+                    <button type="button" onclick="addMember()">Add Member</button>
+                </form>
+
+                <!-- Team Members table goes here -->
+                <table class="data-table">
+
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Sample row, you can dynamically generate these rows from your backend -->
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>Jointer</td>
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+        </div>
+        <script>
+            function addMember() {
+                // Get form values
+                var name = document.getElementById('memberName').value;
+                var email = document.getElementById('memberEmail').value;
+                var role = document.getElementById('memberRole').value;
+
+                // Add a new row to the table
+                var table = document.querySelector('.data-table tbody');
+                var newRow = table.insertRow(-1);
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+                var cell3 = newRow.insertCell(2);
+
+                cell1.textContent = name;
+                cell2.textContent = email;
+                cell3.textContent = role;
+
+                // Clear form fields
+                document.getElementById('memberName').value = '';
+                document.getElementById('memberEmail').value = '';
+                document.getElementById('memberRole').value = 'Jointer'; // Reset to default value
+            }
+        </script>
+        <script>
+            function downloadTable(tableId) {
+                // Get table data
+                const table = document.getElementById(tableId);
+                const wsData = [Array.from(table.querySelectorAll('th')).map(th => th.textContent)]; // Headers
+
+                Array.from(table.querySelectorAll('tbody tr')).forEach(row => {
+                    const rowData = Array.from(row.children).map(cell => cell.textContent);
+                    wsData.push(rowData);
+                });
+
+                // Create a workbook with a worksheet
+                const wb = XLSX.utils.book_new();
+                const ws = XLSX.utils.aoa_to_sheet(wsData);
+                XLSX.utils.book_append_sheet(wb, ws, 'Sheet');
+
+                // Save the workbook as an Excel file
+                XLSX.writeFile(wb, `${tableId}_report.xlsx`);
+            }
+        </script>
+        <script>
+            function changeStatus(button, status) {
+                // Get the row of the clicked button
+                var row = button.parentNode.parentNode;
+
+                // Find the cell where you want to change the value
+                var statusCell = row.cells[row.cells.length - 2]; // Assuming the status cell is the second last cell
+
+                // Update the cell value and style
+                statusCell.textContent = status;
+                statusCell.style.color = status === 'Approved' ? '#4CAF50' : '#FF5252';
+            }
+        </script>
+
+
+    </main>
+
+    <footer>
+        For assistance, contact: <a href="mailto:email@bruggcables.com">email@bruggcables.com</a>
+    </footer>
+
+</body>
+
+</html>

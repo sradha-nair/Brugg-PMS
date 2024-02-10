@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    /* Set background color to white */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    /* Align header content to the left */
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    /* Set header background color to white */
+}
+
+.logo {
+    max-height: 50px;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.login-buttons {
+    margin-top: 40px;
+}
+
+button {
+    padding: 15px;
+    font-size: 16px;
+    background-color: #53baee;
+    /* Set button color to #53baee */
+    color: white;
+    /* Set button text color to white */
+    border: 2px solid #53baee;
+    /* Set button outline color to #53baee */
+    margin: 5px;
+    /* Added margin between buttons */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    /* Added transition effect */
+}
+
+button:hover {
+    background-color: #3a8fd8;
+    /* Change button background color on hover */
+}
+
+button:active {
+    background-color: #2e6aa5;
+    /* Change button background color on click */
+    border-color: #2e6aa5;
+    /* Change button outline color on click */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #53baee;
+    /* Set footer background color to #53baee */
+    width: 100%;
+    /* Set footer width to 100% */
+}
+
+a {
+    color: white;
+}
+
+h1 {
+    color: white;
+    font-size: 30px;
+    /* Reduced font size */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}

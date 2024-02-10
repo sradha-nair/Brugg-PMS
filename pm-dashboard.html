@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pm-dashboard.css">
+    <!-- You can create a separate CSS file for styling -->
+    <title>Project Manager Dashboard</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="assets/brugg-logo-1.png" alt="Company Logo" class="logo">
+        <div class="profile-section">
+            <!-- Display the signed-in project manager's first name and last name -->
+            <span class="username">{{ firstName }} {{ lastName }}</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="account-section">
+            <!-- Add options to change password/email id -->
+            <button class="change-password">Change Password</button>
+            <button class="change-email">Change Email</button>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="dashboard-section">
+            <h2>Projects</h2>
+
+            <!-- Check if projects exist -->
+            {% if projects %}
+            <!-- Iterate over each project and display details -->
+            {% for project in projects %}
+            <div class="project-item">
+                <h3>{{ project.name }}</h3>
+                <p>Project Code: {{ project.code }}</p>
+                <p>Date of Commencement: {{ project.start_date }}</p>
+                <p>Deadline: {{ project.deadline }}</p>
+                <!-- Add more details or actions here -->
+                <a href="pm-project/{{ project.id }}">View Project</a>
+            </div>
+            {% endfor %} {% else %}
+            <!-- Display message if no projects exist -->
+            <p>No current projects</p>
+            {% endif %}
+        </div>
+
+        <!-- Add New Project Section -->
+        <div class="add-project-section">
+            <h2>Add New Project</h2>
+            <!-- Form to add a new project goes here -->
+            <form action="/add-project" method="post">
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" name="projectName" required>
+
+                <label for="projectCode">Project Code:</label>
+                <input type="text" id="projectCode" name="projectCode" required>
+
+                <label for="projectStartDate">Start Date:</label>
+                <input type="date" id="projectStartDate" name="projectStartDate" required>
+
+                <label for="projectDeadline">Project Deadline:</label>
+                <input type="date" id="projectDeadline" name="projectDeadline" required>
+
+                <label for="projectLocation">Project Location:</label>
+                <input type="text" id="projectLocation" name="projectLocation" required>
+
+                <button type="submit">Add Project</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        For assistance, contact: <a href="mailto:email@bruggcables.com">email@bruggcables.com</a>
+    </footer>
+
+</body>
+
+</html>

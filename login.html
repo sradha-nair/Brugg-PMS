@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="assets/brugg-logo-1.png" alt="Company Logo" class="logo">
+    </header>
+
+    <div class="login-container">
+        <div class="tabs">
+            <button onclick="openTab('projectManagerTab')">Project Manager</button>
+            <button onclick="openTab('jointerTab')">Jointer</button>
+        </div>
+        <div id="projectManagerTab" class="tab-content active">
+            <h2>Project Manager Login</h2>
+            <form id="projectManagerForm">
+                <label for="pmEmail">Email:</label>
+                <input type="email" id="pmEmail" required>
+                <label for="pmPassword">Password:</label>
+                <input type="password" id="pmPassword" required>
+                <button type="button" onclick="login('projectManagerForm', 'project-manager-dashboard.html')">Login</button>
+            </form>
+        </div>
+        <div id="jointerTab" class="tab-content">
+            <h2>Jointer Login</h2>
+            <form id="jointerForm">
+                <label for="jointerEmail">Email:</label>
+                <input type="email" id="jointerEmail" required>
+                <label for="jointerPassword">Password:</label>
+                <input type="password" id="jointerPassword" required>
+                <button type="button" onclick="login('jointerForm')">Login</button>
+            </form>
+        </div>
+        <p id="errorMessage" class="error-message"></p>
+
+        <!-- Signup link -->
+        <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+
+    <footer>
+        <p>For assistance contact: <a href="mailto:email@bruggcables.com">email@bruggcables.com</a></p>
+    </footer>
+
+    <script>
+        function openTab(tabName) {
+            var tabs = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        function login(formId) {
+            var form = document.getElementById(formId);
+            var email = form.querySelector('input[type="email"]').value;
+            var password = form.querySelector('input[type="password"]').value;
+
+            // Perform authentication logic here (dummy logic for demonstration)
+            if (email === "pm@example.com" && password === "password") {
+                // Redirect to Project Manager dashboard or perform necessary actions
+                alert("Project Manager Login Successful");
+
+            } else if (email === "jointer@example.com" && password === "password") {
+                // Redirect to Jointer dashboard or perform necessary actions
+                alert("Jointer Login Successful");
+            } else {
+                // Display error message for invalid login
+                document.getElementById("errorMessage").innerText = "Invalid email or password.";
+            }
+        }
+    </script>
+</body>
+
+</html>

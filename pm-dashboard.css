@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: 'C:\Users\exter\Downloads\Brugg-PMS\assets\background-2.jpg';
+    background-size: cover;
+    /* Cover the entire viewport */
+    background-repeat: no-repeat;
+    /* Do not repeat the background image */
+    color: #333;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('assets/background-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: black;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    /* White header */
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.username {
+    margin-left: 10px;
+}
+
+.profile-btn {
+    background-color: #53baee;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main-container,
+.add-project-section {
+    background-color: white;
+    color: black;
+}
+
+button,
+.submit-btn,
+.profile-btn,
+.add-project-section button,
+.change-password-btn,
+.change-email-btn {
+    background-color: #53baee;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Hover effect */
+
+button:hover,
+.submit-btn:hover,
+.profile-btn:hover,
+.add-project-section button:hover,
+.change-password-btn:hover,
+.change-email-btn:hover {
+    background-color: #4088aa;
+    /* Darker shade when hovered */
+}
+
+.project-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #abdbe3;
+    /* Adjusted background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Added box shadow */
+    width: 300px;
+    /* Adjusted width */
+}
+
+.project-item a {
+    display: block;
+    background-color: white;
+    color: black;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.project-item a:hover {
+    background-color: #4088aa;
+}
+
+.add-project-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-right: 20px;
+    /* Move add project section to the right */
+    text-align: left;
+    /* Align text to left */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Added box shadow */
+    max-width: 500px;
+    /* Adjusted max-width */
+}
+
+.add-project-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    background-color: #4caf50;
+    /* Green submit button */
+    color: 4caf50;
+    padding: 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #53baee;
+    /* 53baee footer */
+    color: white;
+    width: 100%;
+}
+
+.add-project-section button {
+    background-color: #4CAF50;
+    /* Green color */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    /* Adjust padding for desired size */
+    border-radius: 10px;
+    /* Make it rounder */
+    font-size: 18px;
+    /* Adjust font size for desired size */
+    cursor: pointer;
+}
+
+.add-project-section button:hover {
+    background-color: #45a049;
+    /* Darker shade when hovered */
+}
+
+.add-project-section button {
+    background-color: #53baee;
+    /* Button color matches footer */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    /* Adjusted padding */
+    border-radius: 10px;
+    /* Make it rounder */
+    font-size: 18px;
+    /* Adjusted font size */
+    cursor: pointer;
+}
+
+.add-project-section button:hover {
+    background-color: #45a049;
+    /* Darker shade when hovered */
+}
+
+.change-password-btn,
+.change-email-btn {
+    background-color: #53baee;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.change-password-btn:hover,
+.change-email-btn:hover {
+    background-color: #4088aa;
+    /* Darker shade when hovered */
+}
+
+button,
+.submit-btn,
+.profile-btn,
+.add-project-section button,
+.change-password-btn,
+.change-email-btn {
+    background-color: #53BAEE;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* Hover effect */
+
+button:hover,
+.submit-btn:hover,
+.profile-btn:hover,
+.add-project-section button:hover,
+.change-password-btn:hover,
+.change-email-btn:hover {
+    background-color: #4088AA;
+    /* Darker shade when hovered */
+}

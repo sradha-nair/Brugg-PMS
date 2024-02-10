@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database.js"></script>
+    <script src="firebaseConfig.js"></script>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <script>
+        function handleSignupForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var role = document.getElementById("role").value;
+
+            fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        password: password,
+                        role: role,
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred. Please try again.');
+                });
+
+            return false;
+        }
+    </script>
+
+    <header>
+        <img src="assets/brugg-logo-1.png" alt="Company Logo" class="logo">
+    </header>
+
+    <main>
+        <div class="centered-text">
+            <h1>Create an account</h1>
+
+            <!-- Signup Form -->
+            <div class="signup-container">
+                <form id="signupForm" onsubmit="return handleSignupForm()">
+                    <div class="form-group">
+                        <label for="firstName">First Name </label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name </label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email ID </label>
+                        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password </label>
+                        <input type="password" id="password" name="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" title="Minimum 8 characters, at least one letter, one number and one special character">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role </label>
+                        <select id="role" name="role" required>
+                            <option value="project-manager">Project Manager</option>
+                            <option value="jointer">Jointer</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <p>Already have an account? <a href="login.html" style="color: black;">Sign in</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

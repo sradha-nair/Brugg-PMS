@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('assets/background.jpg');
+    /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: white;
+    /* Set header background color to white */
+    padding: 20px;
+}
+
+.logo {
+    max-height: 50px;
+    /* Include styles for your logo here */
+}
+
+.login-container {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px auto;
+    /* Center the login container */
+    background-color: white;
+    /* Set login container background color to white */
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background-color: #53baee;
+    /* Set tab background color to #53baee */
+}
+
+.tabs button {
+    background-color: #53baee;
+    /* Set default tab background color to #53baee */
+    color: white;
+    /* Set default tab font color to white */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Add transition effect for background color */
+}
+
+.tabs button:not(.active):hover {
+    background-color: #468ccf;
+    /* Change inactive tab background color on hover */
+}
+
+.tabs button.active {
+    background-color: #3a8fd8;
+    /* Set active tab background color to a slightly darker shade */
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #808080;
+    /* Set label font color to grey */
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #808080;
+    /* Set input border color to grey */
+}
+
+button {
+    padding: 15px;
+    font-size: 16px;
+    color: white;
+    /* Set button font color to white */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2e6aa5;
+    /* Change button background color on hover */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #53baee;
+    /* Set footer background color to #53baee */
+}
